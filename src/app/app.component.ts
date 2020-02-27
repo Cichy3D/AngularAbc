@@ -1,4 +1,3 @@
-import { UsersService } from './services/users.service';
 import { Autor } from './model/autor';
 import { AutorsService } from './services/autors.service';
 import { Component } from '@angular/core';
@@ -11,9 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   likes: number = 0;
-  users: any = [];
 
-  constructor(private autorsService: AutorsService, private usersService: UsersService){}
+  constructor(private autorsService: AutorsService){}
 
   likeClick() {
     this.likes++;
@@ -23,9 +21,6 @@ export class AppComponent {
     return this.autorsService.getAutors();
   }
 
-  getUsers() {
-    this.usersService.getUsers()
-      .subscribe( resp => this.users = resp );
-  }
+
   
 }

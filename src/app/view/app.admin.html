@@ -1,0 +1,11 @@
+
+
+<p>Admin component</p>
+<p>route param: {{dane}}</p>
+<p>query param: {{queryParam}}</p>
+
+<button class="btn" (click)="getUsers()">Get users</button><br/>
+<a [routerLink]="['/admin', 'abc']" [queryParams]="{x: 'xxx'}">Link</a>
+
+<app-user *ngFor="let user of users" [user]="user" ></app-user>
+
